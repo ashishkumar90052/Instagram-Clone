@@ -15,6 +15,15 @@ class _HomeState extends State<Home> {
           Icons.add_box_outlined,
           size: 32,
         ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Theme.of(context).dividerColor,
+            height: 1.0,
+          ),
+          preferredSize: Size.fromHeight(
+            1.0,
+          ),
+        ),
         title: Text('Instagram'),
         centerTitle: true,
         actions: [
@@ -70,6 +79,7 @@ class _HomeState extends State<Home> {
                     physics: ClampingScrollPhysics(),
                     itemBuilder: (context, index) {
                       return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             margin: EdgeInsets.symmetric(horizontal: 16.0),
@@ -126,6 +136,96 @@ class _HomeState extends State<Home> {
                                   'assets/images/favorite.png',
                                   height: 24,
                                   width: 24,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 16.0,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  child: Text('1,092 likes'),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Container(
+                                  child: RichText(
+                                    text: TextSpan(
+                                      style: DefaultTextStyle.of(context).style,
+                                      children: const <TextSpan>[
+                                        TextSpan(
+                                          text: 'ashish kumar',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        TextSpan(text: ' Mission passed'),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: Text(
+                                    'View all 50 comments',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .caption
+                                        .merge(
+                                          TextStyle(fontSize: 14),
+                                        ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Container(
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 16,
+                                        backgroundImage: NetworkImage(
+                                            'https://avatars.githubusercontent.com/u/45348539?s=400&u=b3756f55cb179dcd0dc67b5809de9272eb0cbfa7&v=4'),
+                                      ),
+                                      SizedBox(width: 8.0),
+                                      Text(
+                                        'Add a comment...',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .caption
+                                            .merge(
+                                              TextStyle(fontSize: 14),
+                                            ),
+                                      ),
+                                      Spacer(),
+                                      Icon(
+                                        Icons.add_circle_outline,
+                                        size: 16,
+                                        color: Colors.grey[500],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 8.0,
+                                ),
+                                Text(
+                                  '24 minute ago',
+                                  style:
+                                      Theme.of(context).textTheme.caption.merge(
+                                            TextStyle(fontSize: 14),
+                                          ),
+                                ),
+                                SizedBox(
+                                  height: 16.0,
                                 ),
                               ],
                             ),
